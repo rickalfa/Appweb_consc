@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class AuthController extends Controller
 {
@@ -27,7 +29,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended(route('dashboard'));
+            return redirect('dashboard');
         }
 
         throw ValidationException::withMessages([
@@ -50,7 +52,7 @@ class AuthController extends Controller
     public function dashboard()
     {
 
-        
+        return view('auth.dashboard');
 
     }
 
@@ -74,9 +76,11 @@ class AuthController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $username)
     {
-        //
+        
+        return view('auth.show');
+
     }
 
     /**

@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
+use Illuminate\Auth\Events\Registered;
+
 use Illuminate\Support\Facades\Hash;
 
 
@@ -80,6 +82,8 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password), // Encripta la contraseña
         ]);
+
+        event(new Registered($user));
 
         // Retorna una respuesta con el usuario creado (opcional)
         return response()->json(['message' => 'Usuario registrado exitosamente', 'user' => $user], 201); // 201 Created

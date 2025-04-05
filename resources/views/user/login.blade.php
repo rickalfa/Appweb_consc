@@ -23,7 +23,7 @@
               </div>
               <div class="mb-3">
                 <label for="pwd" class="form-label text-white">Password:</label>
-                <input type="password" class="form-control bg-dark text-light" id="pwd" placeholder="Enter password" name="pswd">
+                <input type="password" class="form-control bg-dark text-light" id="pwd" placeholder="Enter password" name="password">
               </div>
     
               <button type="submit" class="btn btn-primary">Sign in</button>
