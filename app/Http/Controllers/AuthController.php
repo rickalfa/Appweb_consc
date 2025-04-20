@@ -24,9 +24,11 @@ class AuthController extends Controller
             'password' => 'required',
         ]);
 
+        
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
+            // creacion de sesion si las credenciales son validadas
             $request->session()->regenerate();
 
             return redirect('dashboard');

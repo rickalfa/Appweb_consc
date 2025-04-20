@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Auth\Events\Registered;
 
@@ -83,7 +84,17 @@ class UserController extends Controller
             'password' => Hash::make($request->password), // Encripta la contraseña
         ]);
 
-        event(new Registered($user));
+        // creamos uan sesion con lso datos del usuario recien registrado
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            // creacion de sesion si las credenciales son validadas
+            $request->session()->regenerate();
+        }
+
+
+        // Se grea un evento para la validacion de email
+        //event(new Registered($user));
 
         // Retorna una respuesta con el usuario creado (opcional)
         return response()->json(['message' => 'Usuario registrado exitosamente', 'user' => $user], 201); // 201 Created

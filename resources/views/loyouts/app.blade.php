@@ -15,8 +15,8 @@
 
     @vite(['resources/css/app.scss', 'resources/js/app.js'])
 </head>
-<body class="bg-dark">
-    <div id="app">
+<body class="d-flex flex-column min-vh-100 bg-dark ">
+    <div id="app" class="content flex-grow-1">
  
       <x-navbarmain/>
 
@@ -28,9 +28,21 @@
         <!---------- END Main CONTAINER NAV-->
     </div>
 
-
-
-
+    <footer class="footer text-center text-light">
+        <!-- Grid container -->
+        <div class="container p-2"></div>
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+         Created by  © 2025 Copyright:
+          <a class="text-light" href="https://conscientiamstudios.tech/" target="_blank">conscientiamstudios.tech</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+    
     @vite('resources/js/app.js') {{-- Si solo quieres cargar el JS al final --}}
 </body>
+
+
 </html>
