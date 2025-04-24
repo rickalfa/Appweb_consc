@@ -5,17 +5,21 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Auth\VerificationController;
 
+use App\Http\Controllers\ItemController;
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 
+Route::get('/items', [ItemController::class, 'index'])->name('items.index');
 
 Route::post('/storeuser', [UserController::class, 'store'])->name('register.store');
 
 Route::get('/registeruser', [UserController::class, 'create'])->name('user.register');
 
 Route::get('/login',[UserController::class, 'login'])->name('login');
+
 
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

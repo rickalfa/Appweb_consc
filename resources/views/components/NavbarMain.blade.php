@@ -13,6 +13,9 @@
            <li class="nav-item">
              <a href="{{ url('/') }}" class="nav-link active" aria-current="page" href="#">Home</a>
            </li>
+           <li class="nav-item">
+            <a href="{{ url('/items')}}" class="nav-link" aria-current="page" >Items</a>
+          </li>
 
            @auth
 

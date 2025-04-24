@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Item;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreItemRequest;
 use App\Http\Requests\UpdateItemRequest;
 
@@ -13,7 +14,10 @@ class ItemController extends Controller
      */
     public function index()
     {
-        //
+
+        $Items = Item::paginate(10);
+
+        return view('items.index', ['Items' => $Items]);
     }
 
     /**

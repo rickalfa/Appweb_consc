@@ -46,4 +46,18 @@ class User extends Authenticatable implements MustVerifyEmail
             'password' => 'hashed',
         ];
     }
+
+    
+     /**
+      * Get all of the comments for the User
+      *
+      * @return \Illuminate\Database\Eloquent\Relations\HasMany
+      */
+     public function items()
+     {
+         return $this->hasMany(Item::Class, 'created_by', 'id' );
+     }
+
+
+    
 }
