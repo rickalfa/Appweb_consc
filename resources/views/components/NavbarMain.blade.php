@@ -11,7 +11,7 @@
        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
            <li class="nav-item">
-             <a href="{{ url('/') }}" class="nav-link active" aria-current="page" href="#">Home</a>
+             <a href="{{ url('/') }}" class="nav-link" aria-current="page" href="#">Home</a>
            </li>
            <li class="nav-item">
             <a href="{{ url('/items')}}" class="nav-link" aria-current="page" >Items</a>

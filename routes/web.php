@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Auth\VerificationController;
 
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\ItemUserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -30,7 +31,19 @@ Route::get('/dashboard', [AuthController::class, 'dashboard'])->middleware('auth
 Route::middleware('auth')->group(function () {
 
     Route::get('/profile/{username}', [AuthController::class, 'show'])->name('profile.show');
-    
+
+    /**
+     * Routes ITEMS
+     */
+    Route::controller(ItemUserController::class)->group( function(){
+
+        Route::get('/itemsuser', 'index');
+        Route::get('/items/create', 'create')->name('items.create');
+        Route::get('/items/show/{id}', 'show')->name('items.show');
+        
+        Route::post('/items', [ItemUserController::class, 'store'])->name('items.store');
+
+    });
 
     /**
      * Rutas para la verificacion de correo

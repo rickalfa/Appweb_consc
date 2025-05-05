@@ -18,6 +18,7 @@
 <body class="d-flex flex-column min-vh-100 bg-dark ">
     <div id="app" class="content flex-grow-1">
  
+      <!---------------- Nav Menu MAIN----------------------->
       <x-navbarmain/>
 
         <main class="py-4">

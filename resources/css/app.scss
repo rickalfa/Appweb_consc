@@ -1,4 +1,53 @@
 
+
+
+
+.card {
+    transition: transform 0.2s; /* Transición suave para el efecto hover */
+}
+.card:hover {
+    transform: translateY(-5px); /* Eleva la tarjeta un poco al pasar el mouse */
+    box-shadow: 0 4px 8px rgba(4, 255, 59, 0.479); /* Añade una sombra suave */
+}
+
+
+
+.sidebar {
+    height: 90vh;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 250px;
+    background-color: #343a40; /* bg-dark */
+    color: white;
+    padding-top: 60px; /* Ajuste para la barra de navegación superior si la hay */
+}
+.sidebar-heading {
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+}
+.nav-link {
+    color: white;
+    padding: 0.75rem 1.25rem;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Transición suave para color y fondo */
+}
+.nav-link:hover {
+    color: black;          /* Texto negro al pasar el mouse */
+    background-color: white;  /* Fondo blanco al pasar el mouse */
+}
+.nav-link.active {
+    color: black;
+    background-color: white;
+    font-weight: bold;
+}
+
+
+
+
+
+
 .card-title-limited {
     min-height: 3rem;
     max-height: 3rem; /* Ajusta esta altura según necesites */
@@ -7,12 +56,13 @@
 }
 
 .card-text-limited {
-    border-style: solid;
+    
     border-width: 1px;
     border-color: black;
     border-radius: 5%;
     background-color: rgb(233, 236, 236);
-    max-height: 8rem; /* Ajusta esta altura según necesites */
+    max-height: 18rem;
+    min-height: 18rem; /* Ajusta esta altura según necesites */
     overflow: hidden;
 }
 /* Estilos para fijar el footer */
